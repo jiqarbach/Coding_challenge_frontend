@@ -19,6 +19,13 @@ const RegisterPage = () => {
       });
 
       // Handle the response as needed
+      const { accessToken, refreshToken, newUser } = response.data;
+
+      // Store tokens in local storage
+      localStorage.setItem('accessToken', accessToken);
+      localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('user_id', newUser.userId);
+
       console.log(response.data);
     } catch (error) {
       // Handle error

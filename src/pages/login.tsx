@@ -15,11 +15,13 @@ const LoginPage = () => {
       });
 
       console.log(response.data);
-      const { accessToken, refreshToken } = response.data;
+      const { accessToken, refreshToken, user } = response.data;
 
       // Store tokens in local storage
       localStorage.setItem('accessToken', accessToken);
       localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('user_id', user.userId);
+
 
     } catch (error) {
       // Handle error
